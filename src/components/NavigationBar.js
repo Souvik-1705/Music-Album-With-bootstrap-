@@ -17,6 +17,7 @@ function NavigationBar() {
                     <Nav.Link as={Link} to="/">Home</Nav.Link>
                     <Nav.Link as={Link} to="/store">Store</Nav.Link>
                     <Nav.Link as={Link} to="/about">About</Nav.Link>
+                    <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                     <Nav.Link as={Link} to="/cart">
                     <FaShoppingCart size={20}/>
                     <Badge bg='success' className='ms-1'>{cartCount}</Badge>
