@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Row,Col, Container, Button, Card, Alert} from 'react-bootstrap';
 import { CartContext } from '../features/CartProvider';
+import { Link } from 'react-router-dom';
 
 function Store() {
     const[showAlert,setShowAlert]=useState(false);
@@ -34,13 +35,13 @@ function Store() {
       
       const merchArr = [
         {
-          id: 1,
+          id: 5,
           title: 'T-Shirt',
           price: 19.99,
           imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Shirt.png',
         },
         {
-          id: 2,
+          id: 6,
           title: 'Coffee Cup',
           price: 6.99,
           imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Cofee.png',
@@ -71,12 +72,14 @@ function Store() {
             <Row>
                 <Col md={3} className='product-card'>
                 <Card>
+                <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <Card.Img variant='top' src={product.imageUrl}/>
                     <Card.Body>
                         <Card.Title>{product.title}</Card.Title>
                         <Card.Text>{product.price}</Card.Text>
                         <Button onClick={()=>handleAddToCart(product)}>Add To Cart</Button>
                     </Card.Body>
+                    </Link>
                 </Card>
                 </Col>
             </Row> 
@@ -87,17 +90,16 @@ function Store() {
             {merchArr.map((product) => (
                 <Col key={product.id} sm={12} md={6} lg={4} xl={3} className='mb-4'>
                     <Card>
+                    <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                         <Card.Img variant="top" src={product.imageUrl} alt="merch-image" />
                         <Card.Body>
                             <Card.Title>{product.title}</Card.Title>
                             <Card.Text>${product.price}</Card.Text>
                             <Button 
                                 variant="primary" 
-                                onClick={() => dispatch({ type: "Add", product })}
-                            >
-                                Add to Cart
-                            </Button>
+                                onClick={() => dispatch({ type: "Add", product })}>Add to Cart</Button>
                         </Card.Body>
+                        </Link>
                     </Card>
                 </Col>
             ))}
