@@ -1,4 +1,4 @@
-// pages/LoginPage.js
+
 import React, { useRef, useState, useContext } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -38,11 +38,11 @@ const LoginPage = () => {
         throw new Error(data.error.message || 'Authentication Failed!');
       }
 
-      // Save token in context and localStorage
+    
       authCtx.login(data.idToken);
       localStorage.setItem('token', data.idToken);
 
-      // Redirect to products page
+    
       navigate('/store');
     } catch (err) {
       setError(err.message);

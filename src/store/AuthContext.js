@@ -1,4 +1,4 @@
-// store/auth-context.js
+
 import React, { useState, useEffect } from 'react';
 
 const AuthContext = React.createContext({

@@ -1,9 +1,9 @@
-/// src/pages/ProductDetail.js
+
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Image, Card } from 'react-bootstrap';
 
-// Import the same products from Store
+
 const productsArr = [
   {
     id: 1,
